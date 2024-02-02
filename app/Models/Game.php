@@ -14,4 +14,8 @@ class Game extends Model
         "description",
         "thumb",
     ];
+    public function types()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
