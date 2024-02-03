@@ -24,7 +24,8 @@ class StoreGameRequest extends FormRequest
         return [
             "title" => ["required", "min:5", "max:50"],
             "description" => ["required", "min:5", "max:300"],
-            "thumb" => ["required", "min:2", "max:150"]
+            "thumb" => ["required", "min:2", "max:500"],
+            "type_id" => ["required", "exists:types,id"],
         ];
     }
 }

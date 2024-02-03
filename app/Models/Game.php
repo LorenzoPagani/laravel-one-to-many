@@ -12,6 +12,7 @@ class Game extends Model
     protected $fillable = [
         "title",
         "description",
+        "type_id",
         "thumb",
     ];
     public function types()

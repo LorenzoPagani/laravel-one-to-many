@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Http\Requests\StoreGameRequest;
-
+use App\Models\Type;
 use App\Http\Requests\UpdateGameRequest;
 
 class GameController extends Controller
@@ -24,7 +24,8 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view("admin.games.create");
+        $types = Type::all();
+        return view("admin.games.create", compact("types"));
     }
 
     /**
@@ -55,7 +56,8 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        return view("admin.games.edit", compact("game"));
+        $types = Type::all();
+        return view("admin.games.edit", compact("game", "types"));
     }
 
     /**
